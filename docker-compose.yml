@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+  redis:
+    image: redis:latest
+    networks: 
+    - local
+
+  admin:
+    image: rediscommander/redis-commander
+    networks: 
+    - local
+    environment:
+    - REDIS_HOST=redis
+    ports:
+    - "8081:8081"
+    depends_on:
+      - redis
+
+networks:
+  local:
+    driver: bridge   
