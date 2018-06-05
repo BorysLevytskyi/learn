@@ -5,6 +5,8 @@ services:
     image: redis:latest
     networks: 
     - local
+    ports:
+    - "6379:6379"
 
   admin:
     image: rediscommander/redis-commander
