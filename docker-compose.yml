@@ -13,11 +13,13 @@ services:
     networks: 
     - local
     environment:
-    - REDIS_HOST=redis
+      - REDIS_HOST=redis
     ports:
-    - "8081:8081"
+      - "8081:8081"
     depends_on:
       - redis
+    networks: 
+    - local
 
 networks:
   local:
